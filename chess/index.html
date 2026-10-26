@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chess – Play Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Chess</h1>
+
+    <section id="lobby">
+      <button id="create" type="button">Create online game</button>
+      <div class="row">
+        <input id="codeInput" placeholder="Enter game code" maxlength="5" autocomplete="off" aria-label="Game code">
+        <button id="join" type="button">Join</button>
+      </div>
+      <button id="local" type="button" class="quiet">Play on this device</button>
+      <div id="share" hidden>
+        <p>Send this link to your opponent:</p>
+        <input id="shareLink" readonly aria-label="Invite link">
+        <button id="copy" type="button">Copy link</button>
+        <p>Or give them the code: <strong id="codeShown"></strong></p>
+      </div>
+      <p id="lobbyMsg" role="status"></p>
+    </section>
+
+    <section id="game" hidden>
+      <p id="status" role="status" aria-live="polite"></p>
+      <div id="board" aria-label="Chess board"></div>
+      <div class="row">
+        <button id="restart" type="button">New game</button>
+        <button id="leave" type="button" class="quiet">Leave</button>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
